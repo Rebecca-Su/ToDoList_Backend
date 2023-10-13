@@ -25,14 +25,15 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    //createuser needs to check if exist, else need different
     @PostMapping("/")
     public ResponseEntity<UserDto> createUser(@RequestBody UserDto user) {
         return new ResponseEntity<>(userService.save(user), HttpStatus.CREATED);
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<UserDto> updateUser(@PathVariable Long id, @RequestBody UserDto user) {
-        user.setId(id);
+    //updateUser may not have been used
+    @PutMapping("/")
+    public ResponseEntity<UserDto> updateUser(@RequestBody UserDto user) {
         return new ResponseEntity<>(userService.save(user), HttpStatus.CREATED);
     }
 

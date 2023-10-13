@@ -39,7 +39,6 @@ public class CategoryDto {
         .id(category.getId())
         .name(category.getName())
         .description(category.getDescription())
-        .user(UserDto.fromEntity(category.getUser()))
         .tasks(
             category.getTasks() != null ? category.getTasks().stream().map(TaskDto::fromEntity).collect(Collectors.toList()) : null
         )

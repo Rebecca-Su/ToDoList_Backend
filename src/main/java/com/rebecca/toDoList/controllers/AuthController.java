@@ -5,7 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -19,8 +19,8 @@ public class AuthController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/")
-    public ResponseEntity<UserDto> loginUser(@RequestBody UserDto user) {
-        return new ResponseEntity<>(userService.login(user), HttpStatus.OK);
+    @PostMapping("/")
+    public ResponseEntity<UserDto> loginUser(@RequestBody UserDto userDto) {
+        return new ResponseEntity<>(userService.login(userDto), HttpStatus.OK);
     }
 }

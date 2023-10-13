@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.rebecca.toDoList.dto.CategoryDto;
-import com.rebecca.toDoList.dto.TaskDto;
 import com.rebecca.toDoList.services.CategoryService;
 
 @Controller
@@ -47,7 +46,7 @@ public class CategoryController {
     }
 
     @GetMapping("/user={id}")
-    public ResponseEntity<List<CategoryDto>> getAllCategoriesByUserId(Long id) {
+    public ResponseEntity<List<CategoryDto>> getAllCategoriesByUserId(@PathVariable Long id) {
         return new ResponseEntity<>(categoryService.findAllByUserId(id), HttpStatus.OK);
     }
 
