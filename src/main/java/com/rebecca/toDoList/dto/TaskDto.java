@@ -44,7 +44,6 @@ public class TaskDto {
         .startTime(task.getStartTime())
         .done(task.isDone())
         .important(task.isImportant())
-        .category(CategoryDto.fromEntity(task.getCategory()))
         .build();
     }
 }
