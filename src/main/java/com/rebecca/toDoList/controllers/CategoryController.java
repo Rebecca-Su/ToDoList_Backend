@@ -50,10 +50,10 @@ public class CategoryController {
         return new ResponseEntity<>(categoryService.findAllByUserId(id), HttpStatus.OK);
     }
 
-    // may not be useful
     @GetMapping("/user={id}/today")
-    public ResponseEntity<List<CategoryDto>> getAllTaskByCategoriesToday(@PathVariable Long userId) {
-        return new ResponseEntity<>(categoryService.getAllTaskByCategoryToday(userId), HttpStatus.OK);
+    public ResponseEntity<List<CategoryDto>> getAllTaskByCategoriesToday(@PathVariable Long id) {
+        List<CategoryDto> l = categoryService.getAllTaskByCategoryToday(id);
+        return new ResponseEntity<>(categoryService.getAllTaskByCategoryToday(id), HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")

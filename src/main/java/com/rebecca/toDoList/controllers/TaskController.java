@@ -35,6 +35,11 @@ public class TaskController {
         return new ResponseEntity<>(taskService.findById(id), HttpStatus.OK);
     }
 
+    @GetMapping("/user={id}")
+    public ResponseEntity<TaskDto> getTaskByUserId(@PathVariable Long id) {
+        return new ResponseEntity<>(taskService.findById(id), HttpStatus.OK);
+    }
+
     @GetMapping("/category={id}")
     public ResponseEntity<List<TaskDto>> getAllTaskByCategoriesId(@PathVariable Long id) {
         return new ResponseEntity<>(taskService.findByCategory(id), HttpStatus.OK);

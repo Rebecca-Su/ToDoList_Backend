@@ -51,7 +51,7 @@ public class TaskServiceImpl implements TaskService{
     @Override
     public TaskDto findById(Long id) {
         if (id == null) {
-            log.error("User id is null");
+            log.error("Task id is null");
             return null;
         }
 
