@@ -52,7 +52,6 @@ public class CategoryController {
 
     @GetMapping("/user={id}/today")
     public ResponseEntity<List<CategoryDto>> getAllTaskByCategoriesToday(@PathVariable Long id) {
-        List<CategoryDto> l = categoryService.getAllTaskByCategoryToday(id);
         return new ResponseEntity<>(categoryService.getAllTaskByCategoryToday(id), HttpStatus.OK);
     }
 

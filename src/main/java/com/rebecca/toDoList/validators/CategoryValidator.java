@@ -13,7 +13,7 @@ public class CategoryValidator {
 
         if(categoryDto == null) {
             errors.add("Please set the name");
-            errors.add("Please set the description");
+            // errors.add("Please set the description");
             return errors;
         }
 
@@ -21,9 +21,9 @@ public class CategoryValidator {
             errors.add("Please set the name");
         }
 
-        if(StringUtils.isEmpty(categoryDto.getDescription())) {
-            errors.add("Please set the description");
-        }
+        // if(StringUtils.isEmpty(categoryDto.getDescription())) {
+        //     errors.add("Please set the description");
+        // }
 
         return errors;
     }

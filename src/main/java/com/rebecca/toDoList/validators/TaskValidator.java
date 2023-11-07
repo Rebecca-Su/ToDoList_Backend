@@ -12,7 +12,7 @@ public class TaskValidator {
         List<String> errors = new ArrayList<>();
         if(task == null) {
             errors.add("Please set the title");
-            errors.add("Please set the description");
+            // errors.add("Please set the description");
             errors.add("Pleast select a category");
             return errors;
         }
@@ -21,9 +21,9 @@ public class TaskValidator {
             errors.add("Please set the title");
         }
 
-        if (StringUtils.isEmpty(task.getDescription())) {
-            errors.add("Please set the description");
-        }
+        // if (StringUtils.isEmpty(task.getDescription())) {
+        //     errors.add("Please set the description");
+        // }
 
         if (task.getCategory() == null || task.getCategory().getId() == null) {
             errors.add("Please select a category");
